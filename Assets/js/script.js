@@ -6,7 +6,7 @@ $(function () {
 // pull data from local storage and apply it to the hour it was saved to
 
   $(document).ready(function() {
-    
+
     $('.time-block').each(function() {
   
       let timeBlockId = $(this).attr('id');
@@ -30,7 +30,10 @@ $(function () {
   const $description = $timeBlock.children('textarea').val();
 
   localStorage.setItem($timeBlockId, $description);
+  
   });
+
+
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
