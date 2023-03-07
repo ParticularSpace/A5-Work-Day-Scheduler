@@ -35,6 +35,21 @@ $(function () {
 
   var today = dayjs();
 $('#1a').text(today.format('MMM D, YYYY'));
+$('#2a').text(today.format('h:mm A'));
+
+
+var currentHour = dayjs().hour();
+
+$('.time-block').each(function() {
+  var blockHour = parseInt($(this).attr('id'));
+  if (blockHour < currentHour) {
+    $(this).addClass('past');
+  } else if (blockHour === currentHour) {
+    $(this).addClass('present');
+  } else {
+    $(this).addClass('future');
+  }
+});
 
 
   // TODO: Add code to apply the past, present, or future class to each time
