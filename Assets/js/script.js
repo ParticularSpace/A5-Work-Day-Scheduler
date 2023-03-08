@@ -3,53 +3,57 @@
 // in the html.
 $(function () {
 
-// pull data from local storage and apply it to the hour it was saved to
+  // pull data from local storage and apply it to the hour it was saved to
 
-  $(document).ready(function() {
+  $(document).ready(function () {
 
-    $('.time-block').each(function() {
-  
+    $('.time-block').each(function () {
+
       let timeBlockId = $(this).attr('id');
       let savedData = localStorage.getItem(timeBlockId);
- 
+
       if (savedData) {
         $(this).find('textarea').val(savedData);
       }
     });
   });
-  
+
 
   const $saveButton = $('.saveBtn')
 
   // TODO: Add a listener for click events on the save button. This code should
+
   $saveButton.on('click', function (event) {
     event.preventDefault();
 
-  const $timeBlock = $(this).parent();
-  const $timeBlockId = $timeBlock.attr('id');
-  const $description = $timeBlock.children('textarea').val();
+    const $timeBlock = $(this).parent();
+    const $timeBlockId = $timeBlock.attr('id');
+    const $description = $timeBlock.children('textarea').val();
 
-  localStorage.setItem($timeBlockId, $description);
-  
+    localStorage.setItem($timeBlockId, $description);
+
   });
 
   var today = dayjs();
-$('#1a').text(today.format('MMM D, YYYY'));
-$('#2a').text(today.format('h:mm A'));
+
+  $('#1a').text(today.format('MMM D, YYYY'));
+  $('#2a').text(today.format('h:mm A'));
 
 
-var currentHour = dayjs().hour();
+  var currentHour = dayjs().hour();
 
-$('.time-block').each(function() {
-  var blockHour = parseInt($(this).attr('id'));
-  if (blockHour < currentHour) {
-    $(this).addClass('past');
-  } else if (blockHour === currentHour) {
-    $(this).addClass('present');
-  } else {
-    $(this).addClass('future');
-  }
-});
+  $('.time-block').each(function () {
+    var blockHour = parseInt($(this).attr('id'));
+
+    if (blockHour < currentHour) {
+      $(this).addClass('past');
+
+    } else if (blockHour === currentHour) {
+      $(this).addClass('present');
+    } else {
+      $(this).addClass('future');
+    }
+  });
 
 
   // TODO: Add code to apply the past, present, or future class to each time
