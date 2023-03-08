@@ -40,11 +40,11 @@ $(function () {
   $('#2a').text(today.format('h:mm A'));
 
 
-  var currentHour = dayjs().hour();
+  
 
   $('.time-block').each(function () {
-    var blockHour = parseInt($(this).attr('id'));
-
+    const blockHour = parseInt($(this).attr('id'));
+    const currentHour = dayjs().hour();
     if (blockHour < currentHour) {
       $(this).addClass('past');
 
