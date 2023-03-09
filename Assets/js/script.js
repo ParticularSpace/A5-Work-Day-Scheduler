@@ -44,16 +44,17 @@ $(function () {
 
   $('.time-block').each(function () {
     const blockHour = parseInt($(this).attr('id'));
-    const currentHour = dayjs().hour();
+    const currentHour = parseInt(dayjs().format('HH'));
+    console.log(blockHour, currentHour); 
     if (blockHour < currentHour) {
       $(this).addClass('past');
-
     } else if (blockHour === currentHour) {
       $(this).addClass('present');
     } else {
       $(this).addClass('future');
     }
-  });
+});
+
 
 
   // TODO: Add code to apply the past, present, or future class to each time
