@@ -2,7 +2,7 @@
 
 ## URL
 
-
+https://particularspace.github.io/A5-Work-Day-Scheduler/
 
 ## Description
 
@@ -13,7 +13,7 @@ Daily planner to break down your day by the hour.
 Each hour section contains a text box that can be filled in with that hours tasks. Once filled click the save button to keep what has been typed in. The sections update based on the hour of the day. Red = "Current Hour" Green = "Future" Grey = "Past" at the end of each day at 6pm your calendar will refresh.    
 
 ## Screenshot
-![A picture of the webpage](assets/images/nodeScreenShot.png "jS Quiz")
+![A picture of the webpage](assets/images/particularspace.github.io_A5-Work-Day-Scheduler_.png "Work Schedule")
 
 ## Credits
 UC Berkeley Coding Bootcamp Extension
